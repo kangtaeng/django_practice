@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taengstagram</title>
+    <link
+      rel="stylesheet"
+      href="{% static 'posts/style.css' %}"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <h1>New Post</h1>
+
+    <form action="{% url 'posts:create' %}" method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <label for="body">본 문</label>
+          <textarea class='form-control' name="body" id="body" cols="40" rows="10" placeholder="Write Here!"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="image">이미지</label>
+          <input type="file" class="form-control-file" id='image' name="image">
+        </div>
+
+        <br>
+        <input type="submit" value="작 성 하 기">
+    </form>
+    <a href="{% url 'posts:index' %}">목 록</a>
+  </body>
+</html>
