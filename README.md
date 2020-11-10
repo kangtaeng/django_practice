@@ -1,3 +1,3 @@
 # Taengstagram
 
-**Django** 로 만드는 Instagram 클론 엡입니다.
+**Django** 로 만드는 Instagram 클론 앱입니다.
